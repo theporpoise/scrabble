@@ -1,4 +1,4 @@
-"""MAKING A FASTER LOOKUP -  so these lookup functions are pretty slow.  The mysql select is even slower than the dictionary.  To make it faster, I could create a database of all 8 letter tile combinations and their corresponding words.  This way I don't have to run the function each time, I just do a lookup (run the function once and then stick it in the database.)  This would be much quicker...  The question then becomes will I be able to easily sort these answers, let's say, by length.  Or by what the first letter is, or 3rd letter, etc.  This is a good database challenge...  This returns over 200 billion letter combinations.  after quick look at the internet - this ain't feasible.  """
+"""I'm setting up git with this, seeing how it works..."""
 
 import itertools
 from selecting import *
