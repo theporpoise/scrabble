@@ -1,0 +1,12 @@
+This is my scrabble word finder file.
+
+I just started tracking it with git.
+
+So far:
+I grabbed a dictionary - WEB2 or something like that, comes standard on mac b/c it's out of copywrite - it was a newline seperated file of just words.
+
+I ran this into a hash function to assign words to a numeric value with 26 digits (1 digit per letter) - this makes a fast hash to find words that match a certain pattern.
+
+I then took a side turn and hooked it up to mysql.  These files still exist, but they are SLOW, much better to use the dictionary b/c it's not that big (250k lines) and is much much faster.
+
+Then I created a convert function and a lookup function.  convert function turned a word into a hash - which could then be lookep up.  Then I created a combo function, so I could get all the words up to and including the length of the current word.  Then I added some features to lookup up so you could say "starts with 'a' or ends with 'a' or 'a is the third letter' etc." which basically just filters the words you get from the lookup function.  probably would make sense to store an intermediate value so you don't have to recall lookup.
