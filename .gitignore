@@ -1,2 +1,10 @@
 # a comment - this is ignored
 *.pyc       # no compiled python files
+
+# Ignore other unneeded files.
+doc/
+*.swp
+*~
+.project
+.DS_Store
+.idea

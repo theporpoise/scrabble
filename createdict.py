@@ -29,7 +29,7 @@ lnum = dict(
 
 worder = {}
 
-contents = open('raw_data/web2').read().splitlines()
+contents = open('web2').read().splitlines()
 
 lcontents = [x.lower() for x in contents]
 
