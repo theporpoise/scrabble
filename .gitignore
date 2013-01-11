@@ -1,2 +1,2 @@
 # a comment - this is ignored
-*.pyc       # no .a files
+*.pyc       # no compiled python files
