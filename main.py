@@ -1,4 +1,5 @@
-
+"some changes to practice using git"
+"one more change to learn git"
 
 def a_lookup(user_tiles, board_tiles=""):
 	tiles = []
