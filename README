@@ -9,7 +9,7 @@ I grabbed a dictionary - WEB2 or something like that, comes standard on mac b/c 
 
 *I ran this into a hash function to assign words to a numeric value with 26 digits (1 digit per letter) - this makes a fast hash to find words that match a certain pattern.
 
-*I then took a side turn and hooked it up to mysql.  These files still exist, but they are SLOW, much better to use the dictionary b/c it's not that big (250k lines) and is much much faster.
+*I then took a side turn and hooked it up to mysql.  These files still exist, but they are SLOW, much better to use the dictionary for development b/c it's not that big (250k lines) and is much much faster.  If this ever ends up on a phone, then I don't know how it should be done, and am open for suggestions.
 
 *Then I created a convert function and a lookup function.  
 **convert function turned a string of tiles into a hash - which could then be lookep up.
