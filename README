@@ -1,14 +1,25 @@
 This is my scrabble word finder file.
 
-just some changes so it can get gitted... :)
 
-I just started tracking it with git.
+
+ I literally typed this up while learning python just to screw around, it is ugly as hell, has abandoned branches that were undocumented b/c I didn't know how to version control until later, etc. (for instance, I abandoned putting the dictionary into an sql database to then lookup b/c it was so slow, and instead it just recreates the dictionary every time).  However, I did create what I think is a pretty cool key/value system for finding words you can make with your 7 tiles - you get a 26 long number, one number per alphabet character, and it represents your tiles, 11111110000000000000000000 is abcdefg.  Of course this won't work if you have a word with more than 9 of the same letter.  But in the dictionary of over 200k words this did not happen once :).  Makes for a quick lookup of all words with certain letters in a dictionary.  Also cool, is that you can say something like, "starts with an A, or has a C as the third letter".  That stuff is coded, but there is no UI, it is all text based, and it's not very intuitive.  Would be cool if it was tiles or something that a person could move around. 
 
 So far:
 I grabbed a dictionary - WEB2 or something like that, comes standard on mac b/c it's out of copywrite - it was a newline seperated file of just words.
 
-I ran this into a hash function to assign words to a numeric value with 26 digits (1 digit per letter) - this makes a fast hash to find words that match a certain pattern.
+*I ran this into a hash function to assign words to a numeric value with 26 digits (1 digit per letter) - this makes a fast hash to find words that match a certain pattern.
 
-I then took a side turn and hooked it up to mysql.  These files still exist, but they are SLOW, much better to use the dictionary b/c it's not that big (250k lines) and is much much faster.
+*I then took a side turn and hooked it up to mysql.  These files still exist, but they are SLOW, much better to use the dictionary b/c it's not that big (250k lines) and is much much faster.
 
-Then I created a convert function and a lookup function.  convert function turned a word into a hash - which could then be lookep up.  Then I created a combo function, so I could get all the words up to and including the length of the current word.  Then I added some features to lookup up so you could say "starts with 'a' or ends with 'a' or 'a is the third letter' etc." which basically just filters the words you get from the lookup function.  probably would make sense to store an intermediate value so you don't have to recall lookup.
+*Then I created a convert function and a lookup function.  
+**convert function turned a string of tiles into a hash - which could then be lookep up.
+**lookup function returns all words matching that hash
+
+I realized then that this wasn't good enough, b/c it was only returning words of the same length as the string, so...
+
+*Then I created a combo function, so I could get all the words up to and including the length of the current word.
+
+*Then I added some features to lookup up so you could say "starts with 'a' or ends with 'a' or 'a is the third letter' etc." which basically just filters the words you get from the lookup function.  
+
+*probably would make sense to store an intermediate value so you don't have to recall lookup, but on the other hand, prolly makes sense to add more functionality to lookup first, so you can say things like starts with a ends in y, and the first letter has to make a 2 letter word with the letter e (b/c it's common to use two letter words to play off and make another word, don't know how to explain this well, best to look at a scrabble board to understand what i mean here)
+
