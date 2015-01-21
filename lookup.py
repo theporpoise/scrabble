@@ -1,7 +1,7 @@
 """I'm setting up git with this, seeing how it works..."""
 
 import itertools
-from selecting import *
+#from selecting import *
 #Only if you are selecting from mysql database
 from createdict import *
 #only need to do this if you are using the dict instead of the database.  The dict is quicker b/c the set is small, but it is not applicable to larger datasets...
@@ -40,7 +40,7 @@ def convert(tiles):
 	word_hash = 0
 	for letter in tiles:
 		if(letter == '-'):
-			print tiles
+			print(tiles)
 			continue
 		word_hash += lnum[letter]
 	return str(word_hash)
@@ -66,13 +66,13 @@ def lookup(tiles):
 	p_hash = []
 	for i in potentials:
 		p_hash.append(convert(i))
-	print len(p_hash)
+	print(len(p_hash))
 	p_set = set(p_hash)
-	print len(p_set)
+	print(len(p_set))
 	for i in p_set:
 	#	print i
 		if select_words(i):
-			print select_words(i)
+			print(select_words(i))
 
 #must uncomment the import if you want to work	
 def lookup_with_worder(tiles):
@@ -91,7 +91,7 @@ def lookup_with_worder(tiles):
 		if j in worder:
 			easy_read_list.extend(worder[j])
 	easy_read_list.sort(key=len)
-	#print easy_read_list
+	print(easy_read_list)
 	return easy_read_list
 
 
@@ -105,23 +105,23 @@ def a_lookup(user_tiles, board_tiles=None, special_tile=None, position=None):
 
 	for i in tiles:
 		if i == user_tiles:
-			print "for just your tiles"
-			print lookup_with_worder(i)
+			print("for just your tiles")
+			print(lookup_with_worder(i))
 			continue
-		print "for your tiles and the board letter " + i[-1]
+		print("for your tiles and the board letter " + i[-1])
 		with_letter = lookup_with_worder(i)
 		for j in with_letter:
 			if i[-1] in j:
-				print j
+				print(j)
 	
 	#only executes if special tiles given
 	if special_tile:
 		if special_tile not in user_tiles:
 			if special_tile not in board_tiles:
-				print "You don't have that letter"
+				print("You don't have that letter")
 				return
 		
-		print "for words including the letter " + special_tile
+		print("for words including the letter " + special_tile)
 		big_list = []
 		for i in tiles:
 			if special_tile in i:
@@ -135,18 +135,18 @@ def a_lookup(user_tiles, board_tiles=None, special_tile=None, position=None):
 			if special_tile in j:
 				big_list_w_letter.append(j)
 		small_set = set(big_list_w_letter)
-		print small_set
+		print(small_set)
 		
 		if (position > -2):
-			print "for words including the letter " + special_tile + "at position " + str(position)
+			print("for words including the letter " + special_tile + "at position " + str(position))
 			for i in small_set:
 				if i[int(position)] == special_tile:
-					print i
+					print(i)
 
 
 #These are the two test functions that currently work.  lookup with worder is fast (but memory intensive).  Need to make lookup return nicer.  
-#lookup("weaselo")
-#lookup_with_worder("weaselo")
+#lookup("ayideus")
+lookup_with_worder("ayideusc")
 
 """
 test = convert('aseret')

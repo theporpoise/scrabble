@@ -37,7 +37,7 @@ for word in lcontents:
 	word_hash = 0
 	for letter in word:
 		if(letter == '-'):
-			print word
+			print(word)
 			continue
 		word_hash += lnum[letter]
 	if(word_hash in worder):
