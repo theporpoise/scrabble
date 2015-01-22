@@ -1,1 +1,1 @@
-testing reader branch upload
+My 2015 attempt to clean up the scrabble solver.  This time I'm goign to tackle the board state :-).  Should be interesting.
