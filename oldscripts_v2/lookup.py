@@ -144,7 +144,8 @@ def a_lookup(user_tiles, board_tiles=None, special_tile=None, position=None):
 					print(i)
 
 
-#These are the two test functions that currently work.  lookup with worder is fast (but memory intensive).  Need to make lookup return nicer.  
+#These are the two test functions that currently work.  lookup with worder is fast (but memory intensive).  
+#Need to make lookup return nicer.  
 #lookup("ayideus")
 lookup_with_worder("ayideusc")
 
